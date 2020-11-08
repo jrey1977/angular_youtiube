@@ -1,0 +1,26 @@
+<h3 class="mt-5">YouTube Videos</h3>
+<hr>
+<div class="card-columns">
+  <div class="card animate__animated animate__fadeIn" *ngFor="let video of videos">
+    <img class="card-img-top" [src]="video.thumbnails.medium.url" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{video.title}}</h5>
+      <p class="card-text">
+        <strong class="mr-3">Autor:</strong>{{video.channelTitle}}
+      </p>
+      <p class="card-text">
+        <strong class="mr-3">Publicado:</strong>{{video.publishedAt | date}}
+      </p>
+      <button class="btn btn-outline-primary btn-block" (click)="mostrarVideo(video)">Ver</button>
+    </div>
+  </div>
+</div>
+
+<div class="my-5 row text-center">
+  <div class="col">
+    <button class="btn btn-lg btn-primary" (click)="cargarVideos()">
+      Más videos
+    </button>
+  </div>
+</div>
+
